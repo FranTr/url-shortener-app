@@ -1,0 +1,4 @@
+urlShortenedApi:
+  resource: '../src/Infrastructure/Controller/UrlShortened'
+  type: annotation
+  prefix: /api

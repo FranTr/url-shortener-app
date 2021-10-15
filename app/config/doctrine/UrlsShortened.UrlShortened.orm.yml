@@ -1,0 +1,19 @@
+App\Domain\UrlsShortened\UrlShortened:
+  type: entity
+  table: urlshortened
+  repositoryClass: App\Infrastructure\Repository\UrlShortened\DoctrineUrlShortenedRepository
+  id:
+    code:
+        type: string
+        unique: true
+        generator:
+          strategy: NONE
+  fields:
+    url:
+        type: string
+        length: 128
+        unique: true
+    redirections:
+        type: integer
+    isDeleted:
+        type: boolean
