@@ -4,7 +4,7 @@ namespace App\Application\UrlShortened\Create;
 
 use App\Domain\UrlsShortened\UrlShortened;
 use App\Domain\UrlsShortened\UrlShortenedRepository;
-use Ramsey\Uuid\Nonstandard\Uuid;
+use Ramsey\Uuid\Uuid;
 
 
 class CreateUrlShortened
