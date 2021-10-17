@@ -20,4 +20,15 @@ class DoctrineUrlShortenedRepository extends ServiceEntityRepository implements 
         $this->_em->persist($urlShortened);
         $this->_em->flush();
     }
+
+    public function findUrlShortenedByCode(string $code): ?UrlShortened
+    {
+       return $this->findOneBy(['code' => $code]);
+
+    }
+    public function findUrlShortenedByUrl(string $url): ?UrlShortened
+    {
+       return $this->findOneBy(['url' => $url]);
+
+    }
 }

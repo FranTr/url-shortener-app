@@ -31,6 +31,22 @@ services:
         arguments:
             - '@App\Infrastructure\Repository\UrlShortened\DoctrineUrlShortenedRepository'
 
-#    App\Infrastructure\Controller\UrlShortened\SymfonyCreateUrlShortened:
-#        arguments:
-#            - '@App\Application\UrlShortened\Create\CreateUrlShortened'
+    App\Infrastructure\Controller\UrlShortened\SymfonyCreateUrlShortened:
+        arguments:
+            - '@App\Application\UrlShortened\Create\CreateUrlShortened'
+
+    App\Application\UrlShortened\Delete\DeleteUrlShortened:
+        arguments:
+            - '@App\Infrastructure\Repository\UrlShortened\DoctrineUrlShortenedRepository'
+
+    App\Infrastructure\Controller\UrlShortened\SymfonyDeleteUrlShortened:
+        arguments:
+            - '@App\Application\UrlShortened\Delete\DeleteUrlShortened'
+            -
+    App\Infrastructure\Controller\UrlShortened\SymfonyRedirectUrlShortened:
+        arguments:
+            - '@App\Application\UrlShortened\Read\ReadUrlShortened'
+
+    App\Application\UrlShortened\Read\ReadUrlShortened:
+        arguments:
+            - '@App\Infrastructure\Repository\UrlShortened\DoctrineUrlShortenedRepository'

@@ -20,15 +20,14 @@ class SymfonyCreateUrlShortened extends AbstractController
     }
 
     /**
-     * @Route("/urlshortened/create", methods="GET")
+     * @Route("/urlshortened/create", methods="POST")
      * @param Request $request
      * @return JsonResponse
      */
     public function createUrlShortened(Request $request) :JsonResponse
     {
-        $url = $request->get('url');
-        $url = 'http://www.google.es';
-        $this->createUrlShortened->create($url);
-        return new JsonResponse('Created', Response::HTTP_OK);
+        $url = json_decode($request->getContent())->url;
+        $urlShortened = $this->createUrlShortened->create($url);
+        return new JsonResponse('Created ' . $urlShortened->getCode(), Response::HTTP_OK);
     }
 }
